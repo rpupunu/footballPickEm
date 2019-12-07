@@ -15,6 +15,14 @@ var loggedOutLinks= document.querySelectorAll('.logged-out');
 var $b2 = $("#b2");
 
 
+if(sessionStorage.getItem('jwt')){
+  if(sessionStorage.getItem('jwt') !== undefined){
+    loggedOutLinks.forEach(item => item.style.display = 'none');
+      loggedInLinks.forEach(item => item.style.display = 'block');
+    }
+}
+
+
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveExample: function(example) {
@@ -139,11 +147,11 @@ var handleLogIn = function(event) {
     logInForm.reset();
 
   $.post("/login", handShake).then( function(response) {
-    console.log("log in succcessful");
+    
     userToken = response.token;
     sessionStorage.setItem('jwt', userToken);
 
-    if(userToken !== null) {
+    if(userToken !== undefined) {
       loggedOutLinks.forEach(item => item.style.display = 'none');
       loggedInLinks.forEach(item => item.style.display = 'block');
     }
@@ -199,11 +207,21 @@ var handleSignUp = function(event) {
 };
 
 var handleViewTeams = function(event) {
+
+  $.post("/api/games");
   document.location.href = '/viewteams'
 }
 
-handleViewGames = function(event) {
+var handleViewGames = function(event) {
+
+  
+
   document.location.href = '/viewgames'
+
+}
+
+var handleSelectTeams = function(event) {
+  console.log('hello world')  
 }
 
 
@@ -218,4 +236,3 @@ $signUpBtn.on("click", handleSignUp);
 $viewTeamsBtn.on("click", handleViewTeams);
 $viewGamesBtn.on("click", handleViewGames);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
-
