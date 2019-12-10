@@ -32,3 +32,14 @@ This app has user authentication allowing a new user to sign up.   They then can
 Google Slides: https://docs.google.com/presentation/d/1SvWemIAWIRDnifAGaSY_YCe023D0SMpBczxvTwKJmCk/edit?usp=sharing
 
 .PNG imagess of slides: files for each slide can also be found in /public/images/NFL Pick 'Em_presentation_1-10
+
+## Project Improvements/Icebox Items/Features to be added in the future
+1. Matchmaking - currently setup as one admin makes all the squares.  Have it so you invite friends on the app and they choose their squares.
+
+2.  Game Winner Tracking - add UI for the admin to track money on each square, determine the winners of each quarter/half/game, and an auto-txt functionality that text each user/winner with the amount they won.
+
+3.  Multi-User Environment - Add the ability for users to login and not only be able to be part of other peoples games but also be the admin of games and create/invite others to games.
+
+4.  $$$ method - have a way to purchase squares into someones game and make it legit betting.  Evaluate what laws we are breaking if we do that.
+
+5.  UI - Implement the clean UI options we had in mind with login screen and viewing games
